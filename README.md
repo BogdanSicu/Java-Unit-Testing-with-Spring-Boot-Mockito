@@ -16,6 +16,7 @@
       - when(dataServiceMock.retrieveAllData()).thenReturn(new int[] {1,2,3});
     - }
   - by using the method above it is easier to maintain the tests as we are not dependent on any addition to an interface (if somebody adds a method to an interface we don't have to implement it)
+  - a mock does not retain the behavior (code) of the original class
   - we can also inject the mock by using the following approach -> this way we don't need to setup the mock with mock(SomeDataService.class) as before
     - @ExtendWith(MockitoExtension.class) // @RunWith(MockitoJUnitRunner.class) for JUnit 4
     - class SomeBusinessInjectMockTest {
