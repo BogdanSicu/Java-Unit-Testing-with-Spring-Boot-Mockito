@@ -31,7 +31,9 @@
     - ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
     - verify(mock).add(captor.capture());
     - assertEquals("something", captor.getValue());
-  -
+- Spy:
+  - compared to a mock, the spy retains the behavior (code) of the original class -> it uses the real class
+  - it is useful for when we don't have access to a class but we want to check what is going on there
       
 
 ### Section 3
