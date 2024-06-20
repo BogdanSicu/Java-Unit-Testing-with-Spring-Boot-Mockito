@@ -2,6 +2,7 @@
 - Udemy course link: https://www.udemy.com/course/learn-unit-testing-with-spring-boot
 - Github course link: https://github.com/in28minutes/spring-unit-testing-with-junit-and-mockito
 - Limitations of Mockito: https://github.com/mockito/mockito/wiki/FAQ
+- We can overcome the limitations of Mockito by using PowerMock
 
 ## Things learned
 ### Section 2
@@ -35,6 +36,5 @@
 - Spy:
   - compared to a mock, the spy retains the behavior (code) of the original class -> it uses the real class
   - it is useful for when we don't have access to a class but we want to check what is going on there
-      
 
 ### Section 3
