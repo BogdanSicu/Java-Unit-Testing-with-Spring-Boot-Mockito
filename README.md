@@ -24,6 +24,13 @@
     - @Mock
     - SomeDataService dataServiceMock;
     - }
+  - we can use "verify" to check for how many times a method is called -> ex: verify(mock, times(2)).get(anyInt());
+  - we can check what argument is passed to a method. This is called argument capturing and can be done like this:
+    - mock.add("something");
+    - ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
+    - verify(mock).add(captor.capture());
+    - assertEquals("something", captor.getValue());
+  -
       
 
 ### Section 3
