@@ -38,3 +38,14 @@
   - it is useful for when we don't have access to a class but we want to check what is going on there
 
 ### Section 3
+- In order to test requests we need to use MockMvc
+  - in order to @AutoWire MockMvc:
+    - for JUnit 4 we need to add @WebMvcTest(HelloWorldController.class) and @RunWith(SpringRunner.class) on top of the test class
+    - for JUnit 5 we need to add @ExtendWith(SpringExtension.class) and @WebMvcTest on top of the test class
+- We can use "andExpect" instdea of asserts, ex:
+  - {
+    - RequestBuilder request = MockMvcRequestBuilders.get("/items").accept(MediaType.APPLICATION_JSON);
+    -
+    - MvcResult result = mockMvc.perform(request).andExpect(status().isOk())
+    - .andExpect(content().json("{\"name\": \"Ball\",\"id\" :1,\"price\":10,\"quantity\":100}")).andReturn();
+  - }
