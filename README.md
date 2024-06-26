@@ -58,3 +58,4 @@
   - The integration testing class launches the entire application
   - We can still mock classes if we want to replace things inside the integration test
 - HamcrestMatchers is a useful library for writing readable asserts, ex: assertThat(myListOfNumbers, hasSize(3));
+- Test Coverage is important, but we should not overfocus on it because the most important part is what we are testing, what we are asserting
