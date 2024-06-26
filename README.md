@@ -49,3 +49,12 @@
     - MvcResult result = mockMvc.perform(request).andExpect(status().isOk())
     - .andExpect(content().json("{\"name\": \"Ball\",\"id\" :1,\"price\":10,\"quantity\":100}")).andReturn();
   - }
+- In order to test JPA/Hibernate repositories we need to add @DataJpaTest on top of the testing class
+- Integration testing:
+  - For integration testing we need to add the following on top of the testing class:
+    - For JUnit 4 -> @RunWith(SpringRunner.class) @SpringBootTest
+    - For JUnit 5 -> we need just the @SpringBootTest
+    - If we are launching a web app we need to change the @SpringBootTest to @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+  - The integration testing class launches the entire application
+  - We can still mock classes if we want to replace things inside the integration test
+- HamcrestMatchers is a useful library for writing readable asserts, ex: assertThat(myListOfNumbers, hasSize(3));
