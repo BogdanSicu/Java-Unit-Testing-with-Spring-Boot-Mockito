@@ -1,10 +1,19 @@
 package com.munte.section3.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
+
+@Entity
 public class Item {
-    private String name;
+    @Id
     private int id;
+    private String name;
     private int price;
     private int quantity;
+
+    @Transient
+    private int value;
 
     public Item() {
     }
@@ -41,5 +50,13 @@ public class Item {
         sb.append(", quantity=").append(quantity);
         sb.append('}');
         return sb.toString();
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
     }
 }
